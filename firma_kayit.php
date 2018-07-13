@@ -75,17 +75,27 @@ include ("db.php");
 
         }
 
-        else{
+        else {
 
+            $sql2 = "SELECT * FROM firma_uye WHERE fparola='$fparola'  OR fmail='$fmail' ";
+            $result2 = $conn->query($sql2);
 
-            $sql="INSERT INTO firma_uye (fisim,fsektor,fmail,fparola,ftel) VALUES ('$fisim','$fsektor','$fmail','$fparola','$ftel')";
+            if ($result2->num_rows > 0) {
 
-            if (mysqli_query($conn, $sql)) {
-                echo "KAYIT BAŞARIYLA OLUŞTURULDU";
-            } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                echo "BU MAİL ADRESİ VEYA PAROLA ZATEN KULLANILMIŞ";
             }
+            else {
 
+
+                $sql = "INSERT INTO firma_uye (fisim,fsektor,fmail,fparola,ftel) VALUES ('$fisim','$fsektor','$fmail','$fparola','$ftel')";
+
+                if (mysqli_query($conn, $sql)) {
+                    echo "KAYIT BAŞARIYLA OLUŞTURULDU";
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+
+            }
         }
 
         ?>

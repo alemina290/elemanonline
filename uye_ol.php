@@ -110,7 +110,22 @@ require 'class.upload.php';
                 echo "*** TÜM ALANLAR DOLDURULMAK ZORUNDA ***";
 
 
-            } else {
+            }
+
+            else {
+
+
+                $sql2 = "SELECT * FROM uye WHERE parola='$parola'  OR mail='$mail' ";
+                $result2 = $conn->query($sql2);
+
+                if ($result2->num_rows > 0) {
+
+                    echo "BU MAİL ADRESİ VEYA PAROLA ZATEN KULLANILMIŞ";
+                }
+
+                else{
+
+
 
 
                 $sql = "INSERT INTO uye (isim,soyisim,sektor,mail,parola,tel,profil) VALUES ('$isim','$soyisim','$sektor','$mail','$parola','$tel','$image_yukle')";
@@ -121,7 +136,8 @@ require 'class.upload.php';
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
 
-            }
+            }}
+
         }
 
         ?>

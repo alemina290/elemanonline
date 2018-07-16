@@ -39,7 +39,12 @@
         <a href="uye_giris.php" <button type="button" class="btn btn-danger">GİRİŞ YAP</button>  </a>
         <a href="uye_giris.php" <button type="button" class="btn btn-info">İŞ BAŞVURUSU</button>  </a>
 
+
+
     </div>
+
+
+
 
 
     <?php
@@ -47,7 +52,11 @@
    include("db.php");
 
 echo "<div class='container'>";
-        echo "<table class='table table-striped'>";
+
+echo "<input class=\"form-control\" id=\"myInput\" type=\"text\" placeholder=\"Search...\"><br>";
+        echo "<table class='table table-bordered table-striped' id='myTable'>";
+
+
 
             echo " <tr> ";
 
@@ -101,6 +110,18 @@ echo "<div class='container'>";
             ?>
 
 </center>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
 
 

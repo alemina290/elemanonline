@@ -52,7 +52,7 @@ if(!isset($_SESSION["login"])){
             İSİM:    <input type="text" name="isim"  value="<?php echo $_SESSION['isim'];?>"> <br><br>
             SOYİSİM:    <input type="text" name="soyisim"  value="<?php echo $_SESSION['soyisim'];?>"> <br><br>
             MAIL  :        <input type="email" name="mail" pattern=".+@.+.com" value="<?php echo $_SESSION['mail'];?>"> <br><br>
-            CEP TELEFONU : <input type="number" name="tel" pattern="[0-9]{10}"  value="<?php echo $_SESSION['tel'];?>"> <br><br>
+            CEP TELEFONU : <input type="tel" name="tel" pattern="[0-9]{10}"  value="<?php echo $_SESSION['tel'];?>"> <br><br>
 
             <br><br>
 

@@ -50,7 +50,7 @@ if(!isset($_SESSION["login"])){
 
                     FİRMA İSMİ:    <input type="text" name="fisim"  value="<?php echo $_SESSION['fisim'];?>"> <br><br>
                     MAIL  :        <input type="email" name="fmail"  pattern=".+@.+.com" value="<?php echo $_SESSION['fmail'];?>"> <br><br>
-                    CEP TELEFONU : <input type="number" name="ftel"  pattern="[0-9]{10}" value="<?php echo $_SESSION['ftel'];?>"> <br><br>
+                    CEP TELEFONU : <input type="tel" name="ftel"  pattern="[0-9]{10}" value="<?php echo $_SESSION['ftel'];?>"> <br><br>
 
                     <br><br>
 

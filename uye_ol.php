@@ -24,20 +24,31 @@ require 'class.upload.php';
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
-    <div class="alert alert-success">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="giris.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>UYE KAYIT </h4>
 
-    </div>
+            </div>
+        </div>
+        <h3 style="color: dimgray">UYE-KAYIT</h3><br>
+    </nav>
 
 
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
 
         <?php
 
@@ -65,24 +76,85 @@ require 'class.upload.php';
         ?>
 
 
-        <form method="post" class="form-group" enctype="multipart/form-data">
 
-            PROFİL RESMİ: <input type="file" name="image" /> <hr/>
-            İSİM:    <input type="text" name="isim" > <br><br>
-            SOYİSİM  :        <input type="text" name="soyisim" > <br><br>
-            E-MAİL : <input type="email" name="mail" pattern=".+@.+.com" placeholder="example@example.com" > <br><br>
-            TELEFON :       <input type="tel" name="tel"  pattern="[0-9]{10}" placeholder="5369656874"> <br><br>
-            PAROLA: <input type="password" name="parola" minlength="4"> <br><br>
-            SEKTÖR : <br><br>      <input type="radio" name="sektor" value="YAZILIM"> YAZILIM
-            <input type="radio" name="sektor" value="ELEKTRONIK"> ELEKTRONIK
-            <input type="radio" name="sektor" value="MAKINE">  MAKINE
+
+        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+
+            <div class="form-group">
+
+                <input type="file" name="image">
+
+                    <br><br>
+
+                </div>
+
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="isim">İSİM:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="isim">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="soyisim">SOYİSİM:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="soyisim">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="mail">E-MAİL:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" name="mail" pattern=".+@.+.com" placeholder="example@example.com">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="tel">TELEFON:</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control"  name="tel"   pattern="[0-9]{10}" placeholder="5369656874">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="parola">PAROLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="parola"  minlength="4"> <br><br>
+
+                </div>
+            </div>
+
+            <div class="form-group" >
+
+                <label class="control-label col-sm-2" for="sektor">SEKTOR:</label>
+                <div class="col-sm-10" style="font-size: 1.3em">
+                    <input type="radio"  class="r" name="sektor" value="YAZILIM" >  YAZILIM
+                    <input type="radio"  class="r" name="sektor" value="ELEKTRONIK">  ELEKTRONİK
+                    <input type="radio"  class="r" name="sektor"  value="MAKINE">  MAKİNE
+
+                </div></div>
+
 
             <br><br>
 
-            <button type="submit" class="btn btn-primary" name="submit" >KAYDOL</button><br><br>
-            <a href="uye_giris.php">  <button type="button" class="btn btn-danger" >GİRİŞE DÖN</button> </a>
 
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" name="submit">KAYDOL</button> <br><br>
+
+
+
+                    <a href="uye_giris.php">    <button type="button" class="btn btn-basic">GİRİŞE DÖN</button>  </a>
+                </div>
+            </div>
         </form>
+    </div>
 
         <?php
 
@@ -141,7 +213,7 @@ require 'class.upload.php';
         }
 
         ?>
-    </div>
+
 
 
 </center>

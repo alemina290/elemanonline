@@ -28,46 +28,94 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
 
-    <div class="alert alert-success">
-
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>PROFİL</h4><br>
-
-    </div>
-
-
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
-
-
-        <form method="post" class="form-group" enctype="multipart/form-data">
-
-            PROFİL RESMİ:    <input type="file" name="image"  value="<?php echo $_SESSION['resim'];?>"> <br><br>
-            İSİM:    <input type="text" name="isim"  value="<?php echo $_SESSION['isim'];?>"> <br><br>
-            SOYİSİM:    <input type="text" name="soyisim"  value="<?php echo $_SESSION['soyisim'];?>"> <br><br>
-            MAIL  :        <input type="email" name="mail" pattern=".+@.+.com" value="<?php echo $_SESSION['mail'];?>"> <br><br>
-            CEP TELEFONU : <input type="tel" name="tel" pattern="[0-9]{10}"  value="<?php echo $_SESSION['tel'];?>"> <br><br>
-
-            <br><br>
-
-            <button type="submit" class="btn btn-success" name="submit" >ONAYLA</button> <br><br>
-            <a href="uye_sil.php"> <button type="button" class="btn btn-primary">UYELİK SİL</button></a> <br><br>
-            <a href="uye_sifre_degis.php"> <button type="button" class="btn btn-info">SİFRE DEGİSTİR</button></a><br><br>
-            <a href="uye_duzenle.php">    <button type="button" class="btn btn-danger" >GİRİŞE DÖN</button> </a>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="uye_duzenle.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
 
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="uye_sil.php"><span class="glyphicon glyphicon-erase"></span> UYELİK SİL</a></li>
+                    <li><a href="uye_sifre_degis.php"><span class="glyphicon glyphicon-refresh"></span> SİFRE DEĞİŞTİR</a></li>
+                    <li><a href="giris.php"><span class="glyphicon glyphicon-log-out"></span> ÇIKIŞ</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3 style="color: dimgray">ÜYE-AYAR</h3><br>
+    </nav>
 
+
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
+        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="image">PROFİL RESMİ:</label>
+
+                <input type="file" name="image" value="<?php echo $_SESSION['resim'];?>">
+
+                <br><br>
+
+            </div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="isim">İSİM:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="isim" value="<?php echo $_SESSION['isim'];?>">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="soyisim">SOYİSİM:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="soyisim" value="<?php echo $_SESSION['soyisim'];?>">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="mail">E-MAİL:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" name="mail" pattern=".+@.+.com" value="<?php echo $_SESSION['mail'];?>">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="tel">TELEFON:</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control"  name="tel"   pattern="[0-9]{10}" value="<?php echo $_SESSION['tel'];?>">
+
+                </div></div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" name="submit">ONAYLA</button> <br><br>
+
+
+                    <a href="uye_duzenle.php">    <button type="button" class="btn btn-basic">GİRİŞE DÖN</button>  </a>
+                </div>
+            </div>
 
         </form>
 
 
-        <br><br>
 
         <?php
 

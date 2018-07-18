@@ -1,0 +1,32 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+
+
+
+}
+
+.row.content {height: 520px}
+
+
+.sidenav {
+    padding-top: 20px;
+    background-color: white;
+    height: 100%;
+}
+
+
+footer {
+    background-color: darkgrey;
+    color: white;
+    padding: 15px;
+}
+
+.r{
+
+
+    width: 1.2em;
+    height: 1.2em;
+
+}
+

@@ -28,38 +28,73 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
 
-    <div class="alert alert-success">
-
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>PROFİL</h4><br>
-
-    </div>
-
-
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
-
-
-                <form method="post" class="form-group">
-
-                    FİRMA İSMİ:    <input type="text" name="fisim"  value="<?php echo $_SESSION['fisim'];?>"> <br><br>
-                    MAIL  :        <input type="email" name="fmail"  pattern=".+@.+.com" value="<?php echo $_SESSION['fmail'];?>"> <br><br>
-                    CEP TELEFONU : <input type="tel" name="ftel"  pattern="[0-9]{10}" value="<?php echo $_SESSION['ftel'];?>"> <br><br>
-
-                    <br><br>
-
-                    <button type="submit" class="btn btn-success" >ONAYLA</button> <br><br>
-                    <a href="firma_sil.php"> <button type="button" class="btn btn-primary">UYELİK SİL</button></a> <br><br>
-                    <a href="firma_sifre_degis.php"> <button type="button" class="btn btn-info">SİFRE DEGİSTİR</button></a><br><br>
-                    <a href="firma_duzenle.php">    <button type="button" class="btn btn-danger" >GİRİŞE DÖN</button> </a><br><br>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="firma_duzenle.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
 
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="firma_sil.php"><span class="glyphicon glyphicon-erase"></span> UYELİK SİL</a></li>
+                    <li><a href="firma_sifre_degis.php"><span class="glyphicon glyphicon-refresh"></span> SİFRE DEĞİŞTİR</a></li>
+                    <li><a href="giris.php"><span class="glyphicon glyphicon-log-out"></span> ÇIKIŞ</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3 style="color: dimgray">FİRMA-AYAR</h3><br>
+    </nav>
+
+
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
+    <form method="post" class="form-horizontal">
+
+        <div class="form-group">
+
+            <label class="control-label col-sm-2" for="fisim">FİRMA İSMİ:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="fisim" value="<?php echo $_SESSION['fisim'];?>">
+
+            </div></div>
+
+        <div class="form-group">
+
+            <label class="control-label col-sm-2" for="fmail">E-MAİL:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" name="fmail" pattern=".+@.+.com" value="<?php echo $_SESSION['fmail'];?>">
+
+            </div></div>
+
+        <div class="form-group">
+
+            <label class="control-label col-sm-2" for="ftel">TELEFON:</label>
+            <div class="col-sm-10">
+                <input type="tel" class="form-control"  name="ftel"   pattern="[0-9]{10}" value="<?php echo $_SESSION['ftel'];?>">
+
+            </div></div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">ONAYLA</button> <br><br>
+
+
+
+                <a href="firma_duzenle.php">    <button type="button" class="btn btn-basic">GİRİŞE DÖN</button>  </a>
+            </div>
+        </div>
 
                 </form>
 
@@ -98,7 +133,7 @@ if(!isset($_SESSION["login"])){
 
 
         ?>
-    </div>
+
 
 
 </center>

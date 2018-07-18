@@ -28,34 +28,60 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
 
-    <div class="alert alert-success">
-
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>UYELİK SİL</h4><br>
-
-    </div>
-
-
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
-
-
-        <form method="post" class="form-group">
-
-            PAROLA: <input type="password" name="parola"><br><br><br>
-            ONAYLA: <input type="password" name="oparola"><br><br>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="uye_duzenle.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
 
-            <br><br>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="giris.php"><span class="glyphicon glyphicon-log-out"></span> ÇIKIŞ</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3 style="color: dimgray">UYELİK SİL</h3><br>
+    </nav>
 
-            <button type="submit" class="btn btn-danger">SİL</button><br><br>
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
+        <form method="post" class="form-horizontal">
 
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="parola">PAROLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="parola" minlength="4">
+
+                </div></div>
+
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="oparola">ONAYLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control"  name="oparola" minlength="4">
+
+                </div></div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">SİL</button> <br><br>
+                </div>
+            </div>
 
         </form>
 

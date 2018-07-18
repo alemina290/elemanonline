@@ -20,36 +20,92 @@ include ("db.php");
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
-    <div class="alert alert-success">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="giris.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>FİRMA KAYIT </h4>
+            </div>
+        </div>
+        <h3 style="color: dimgray">FİRMA-KAYIT</h3><br>
+    </nav>
 
-    </div>
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
+
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
 
 
-        <form method="post" class="form-group">
+        <form method="post" class="form-horizontal">
 
-            FİRMA İSMİ:    <input type="text" name="fisim" > <br><br>
-            MAIL  :        <input type="email" name="fmail" pattern=".+@.+.com" placeholder="example@example.com" > <br><br>
-            CEP TELEFONU : <input type="tel" name="ftel"   pattern="[0-9]{10}" placeholder="5369656874"> <br><br>
-            PAROLA :       <input type="password" name="fparola"  minlength="4"> <br><br>
-            SEKTÖR :    <br><br>   <input type="radio" name="fsektor" value="YAZILIM"> YAZILIM
-             <input type="radio" name="fsektor" value="ELEKTRONIK"> ELEKTRONİK
-             <input type="radio" name="fsektor" value="MAKINE">  MAKİNE
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="fisim">FİRMA İSMİ:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="fisim">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="fmail">E-MAİL:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" name="fmail" pattern=".+@.+.com" placeholder="example@example.com">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="ftel">TELEFON:</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control"  name="ftel"   pattern="[0-9]{10}" placeholder="5369656874">
+
+                </div></div>
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="fparola">PAROLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="fparola"  minlength="4"> <br><br>
+
+                </div>
+            </div>
+
+            <div class="form-group" >
+
+                <label class="control-label col-sm-2" for="fsektor">SEKTOR:</label>
+                <div class="col-sm-10" style="font-size: 1.3em">
+                    <input type="radio"  class="r" name="fsektor" value="YAZILIM" >  YAZILIM
+                    <input type="radio"  class="r" name="fsektor" value="ELEKTRONIK">  ELEKTRONİK
+                    <input type="radio"  class="r" name="fsektor"  value="MAKINE">  MAKİNE
+
+                </div></div>
+
 
             <br><br>
 
-            <button type="submit" class="btn btn-primary" >KAYDOL</button><br><br>
-            <a href="firma_giris.php">  <button type="button" class="btn btn-danger" >GİRİŞE DÖN</button> </a>
 
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">KAYDOL</button> <br><br>
+
+
+
+                    <a href="firma_giris.php">    <button type="button" class="btn btn-basic">GİRİŞE DÖN</button>  </a>
+                </div>
+            </div>
         </form>
+    </div>
 
         <?php
 
@@ -70,7 +126,7 @@ include ("db.php");
 
         if($fisim=="" || $fsektor=="" || $fmail=="" || $fparola=="" || $ftel==""){
 
-            echo "*** TÜM ALANLAR DOLDURULMAK ZORUNDA ***";
+            echo "<h4> *** TÜM ALANLAR DOLDURULMAK ZORUNDA *** </h4>";
 
 
         }
@@ -82,7 +138,7 @@ include ("db.php");
 
             if ($result2->num_rows > 0) {
 
-                echo "BU MAİL ADRESİ VEYA PAROLA ZATEN KULLANILMIŞ";
+                echo "<h4> BU MAİL ADRESİ VEYA PAROLA ZATEN KULLANILMIŞ </h4>";
             }
             else {
 
@@ -90,7 +146,7 @@ include ("db.php");
                 $sql = "INSERT INTO firma_uye (fisim,fsektor,fmail,fparola,ftel) VALUES ('$fisim','$fsektor','$fmail','$fparola','$ftel')";
 
                 if (mysqli_query($conn, $sql)) {
-                    echo "KAYIT BAŞARIYLA OLUŞTURULDU";
+                    echo "<h4> KAYIT BAŞARIYLA OLUŞTURULDU </h4>";
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
@@ -99,11 +155,7 @@ include ("db.php");
         }
 
         ?>
-    </div>
-
-
 </center>
-
 
 
 </body>

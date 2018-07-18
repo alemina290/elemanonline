@@ -26,53 +26,88 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
 
-    <div class="alert alert-success">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="firma_duzenle.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>İLAN VER</h4>
+                <ul class="nav navbar-nav navbar-right">
 
-    </div>
+                    <li><a href="ilan_sil.php"><span class="glyphicon glyphicon-erase"></span> İLAN SİL</a></li>
+                    <li><a href="giris.php"><span class="glyphicon glyphicon-log-out"></span> ÇIKIŞ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="color: dimgray">İLAN-VER</h3><br>
+    </nav>
+
+
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
+
+        <form method="post" class="form-horizontal">
 
 
 
+    <div class="form-group">
 
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
+        <label class="control-label col-sm-2" for="departman">DEPARTMAN:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="departman">
 
-
-        <form method="post" class="form-group">
-
-            DEPARTMAN:    <input type="text" name="departman" > <br><br>
-
-            YABANCI DİL  :       <input type="radio" name="yabanci" value=yok> YOK
-
-            <input type="radio" name="yabanci" value=ingilizce> İNGİLİZCE
-            <input type="radio" name="yabanci" value=diger> DİĞER
+        </div></div>
 
             <br><br>
-            TECRÜBE:    <input type="radio" name="tecrube" value=tecrubeli > TECRÜBELİ
-            <input type="radio" name="tecrube" value=tecrubesiz> TECRÜBESİZ
 
-            <br><br>
+            <div class="form-group" >
 
-
-
-
-            <br><br>
-
-            <button type="submit" class="btn btn-success" >ONAYLA</button> <br><br>
-            <a href="ilan_sil.php">    <button type="button" class="btn btn-primary" >İLANIMI KALDIR</button> </a><br><br>
-            <a href="firma_duzenle.php">    <button type="button" class="btn btn-danger" >GİRİŞE DÖN</button> </a>
+                <label class="control-label col-sm-2" for="yabanci">YABANCI DİL:</label>
+                <div class="col-sm-10" style="font-size: 1.3em">
+                    <input type="radio"  class="r" name="yabanci" value="ingilizce" >  İNGİLİZCE
+                    <input type="radio"  class="r" name="yabanci" value="diger">  DİĞER
 
 
+                </div></div>
+
+            <div class="form-group" >
+
+                <label class="control-label col-sm-2" for="tecrube">TECRUBE:</label>
+                <div class="col-sm-10" style="font-size: 1.3em">
+                    <input type="radio"  class="r" name="tecrube" value="tecrubeli" >  TECRUBELİ
+                    <input type="radio"  class="r" name="tecrube" value="tecrubesiz">  TECRUBESİZ
+
+
+                </div></div>
+
+            <br>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">ONAYLA</button> <br><br>
+
+
+
+                    <a href="firma_duzenle.php">    <button type="button" class="btn btn-basic">GİRİŞE DÖN</button>  </a>
+                </div>
+            </div>
 
         </form>
+
 
 
         <br><br>

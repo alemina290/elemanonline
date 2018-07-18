@@ -25,19 +25,27 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
-    <div class="alert alert-success">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="giris.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>FİRMA-LOGİN</h4>
-
-    </div>
-
+            </div>
+        </div>
+    </nav>
 <?php
 
 
@@ -66,13 +74,13 @@ else{
     if($ka=="" or $sifre=="") {
         echo "<center><h3>*** TÜM ALANLAR DOLDURULMAK ZORUNDA ***</h3><br><br>
  
-            <a href=javascript:history.back(-1)>  <button type='button' class='btn btn-danger'>GERİ DÖN   </button> </a></center>";
+            <a href=javascript:history.back(-1)>  <button type='button' class='btn btn-basic'>GERİ DÖN   </button> </a></center>";
     }
 
     else {
         echo "<center><h3>*** KULLANICI ADI YADA ŞİFRE HATALI ***</h3><br><br>
             
-            <a href=javascript:history.back(-1)> <button type='button' class='btn btn-danger'>GERİ DÖN   </button></a></center>";
+            <a href=javascript:history.back(-1)> <button type='button' class='btn btn-basic'>GERİ DÖN   </button></a></center>";
     }
 }
 

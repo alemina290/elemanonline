@@ -25,19 +25,31 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
 
-    <div class="alert alert-success">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="firma_duzenle.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>İLAN - KALDIR</h4><br>
 
-    </div>
+            </div>
+        </div>
+
+        <h3 style="color: dimgray">İLAN-SİL</h3><br>
+    </nav>
 
     <?php
 

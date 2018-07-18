@@ -27,39 +27,78 @@ if(!isset($_SESSION["login"])){
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style></style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <center>
 
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="firma_duzenle.php">ELEMAN-ONLİNE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-    <div class="alert alert-success">
 
-        <h3>ELEMAN - ONLİNE</h3><br>
-        <h4>SİFRE DEĞİŞTİR</h4><br>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="giris.php"><span class="glyphicon glyphicon-log-out"></span> ÇIKIŞ</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3 style="color: dimgray">ŞİFRE DEĞİŞTİR</h3><br>
+    </nav>
 
-    </div>
 
 
-    <div class="jumbotron" style="height: 50%; width: 30%; padding-top: 30px; margin:30px;">
 
+    <div class="container" style="height: 50%; width: 40%; padding-top: 30px; margin:30px;">
+        <form method="post" class="form-horizontal">
 
-        <form method="post" class="form-group">
+            <div class="form-group">
 
-           ESKİ PAROLA: <input type="password" name="eparola"><br><br><br>
-            YENİ PAROLA: <input type="password" name="yparola" minlength="4"><br><br>
-            ONAYLA: <input type="password" name="y2parola" minlength="4"><br><br>
+                <label class="control-label col-sm-2" for="eparola">ESKİ PAROLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="eparola">
+
+                </div></div>
 
             <br><br>
 
-            <button type="submit" class="btn btn-primary" >ONAYLA</button><br><br>
-            <a href="firma_duzenle.php">    <button type="button" class="btn btn-danger" >GİRİŞE DÖN</button> </a>
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="yparola">YENİ PAROLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="yparola" minlength="4">
+
+                </div></div>
+
+
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="y2parola">ONAYLA:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control"  name="y2parola" minlength="4">
+
+                </div></div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">ONAYLA</button> <br><br>
+
+
+
+                    <a href="firma_duzenle.php">    <button type="button" class="btn btn-basic">GİRİŞE DÖN</button>  </a>
+                </div>
+            </div>
 
         </form>
 
-
-        <br><br>
 
         <?php
 
@@ -110,7 +149,7 @@ if(!isset($_SESSION["login"])){
 
 
         ?>
-    </div>
+
 
 
 </center>
